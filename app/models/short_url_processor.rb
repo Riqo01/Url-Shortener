@@ -1,0 +1,2 @@
+class ShortUrlProcessor < ApplicationRecord
+end

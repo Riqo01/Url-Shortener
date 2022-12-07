@@ -1,0 +1,17 @@
+<h1>New Pattern</h1>
+
+<%= form_with model: @pattern do |form| %>
+  <div>
+    <%= form.label :format %><br>
+    <%= form.text_field :format %>
+  </div>
+
+  <div>
+    <%= form.label :lastPatternUsed %><br>
+    <%= form.text_field :lastPatternUsed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

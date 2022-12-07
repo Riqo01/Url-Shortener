@@ -1,0 +1,45 @@
+
+
+<% if user_signed_in? %>
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Link</th>
+    <th scope="col">Short Url</th>
+    <th scope="col">Created On</th>
+    <th scope="col">Expiry Date</th>
+    <th scope="col">No of Visits</th>
+  </tr>
+</thead>
+<tbody>
+
+<% @i= 1 %>
+
+
+
+<% @shortlinks.each do |shortlink| %>
+ 
+ 
+     
+    <tr>
+      <th scope="row"><%= @i %></th>
+      <td><%= shortlink.url %></td>
+      <% if shortlink.shorturl != nil %>
+      <td><%= @baseurl + shortlink.shorturl %></td>
+      <% else %>
+      <td><%= shortlink.shorturl %></td>
+      <% end %>
+      <td><%= shortlink.created_at %></td>
+      <td><%= shortlink.expiry_date %></td>
+      <td><%= shortlink.visit_count %></td>
+    </tr>
+    
+    <% @i= @i + 1 %>
+<% end %>
+
+</tbody>
+</table>
+
+<% end %> 

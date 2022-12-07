@@ -1,0 +1,2 @@
+class Csvupload < ApplicationRecord
+end

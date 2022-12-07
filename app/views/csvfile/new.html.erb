@@ -1,0 +1,20 @@
+<div class="col s3 card form">
+<h6>Upload Csv File</h6>
+<%= form_tag csvfile_import_links_path, :multipart => true do %>          
+          <label for="">Please select your Csv File</label>
+          <%= file_field_tag :csvfiletag, required: true %>
+      <div class="submit">
+        <%= submit_tag 'Upload File', class: 'btn blue' %>
+      </div>
+    <% end %>
+</div>
+
+
+
+
+
+
+ 
+   
+
+

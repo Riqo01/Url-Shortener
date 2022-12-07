@@ -1,0 +1,35 @@
+
+
+<% if user_signed_in? %>
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Path</th>
+    <th scope="col">Total Records</th>
+    <th scope="col">Completely Processed</th>
+    <th scope="col">Uploaded At</th>
+  </tr>
+</thead>
+<tbody>
+
+<% @i= 1 %>
+<% @csvuploads.each do |csvupload| %>
+    <tr>
+      <th scope="row"><%= @i %></th>
+      <td><%= csvupload.name %></td>      
+      <td><%= csvupload.path %></td>
+      <td><%= csvupload.rowcount %></td>
+      <td><%= csvupload.processed %></td>
+      <td><%= csvupload.created_at %></td>
+    </tr>
+    
+    <% @i= @i + 1 %>
+<% end %>
+
+</tbody>
+</table>
+
+<% end %> 
